@@ -9,10 +9,22 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    var value: String?
+    var advice: String?
+    var backgroundColor: UIColor?
+
     @IBOutlet var resultText: UILabel!
     @IBOutlet var adviceText: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        resultText.text = value
+        adviceText.text = advice
+        view.backgroundColor = backgroundColor
+    }
+
+    @IBAction func onRecalculatePressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }

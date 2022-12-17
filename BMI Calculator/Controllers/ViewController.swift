@@ -48,8 +48,11 @@ class ViewController: UIViewController {
         if segue.identifier == "/bmiResult" {
             print("Navigating To Bmi Result Screen")
             
-            var destination: UIViewController = segue.destination as! ResultViewController
+            let destination = segue.destination as! ResultViewController
             
+            destination.value = bmiCalculator.getBmiValue()
+            destination.advice = bmiCalculator.getBmiAdvice()
+            destination.backgroundColor = bmiCalculator.getBmiColor()
         }
     }
 }
